@@ -3,8 +3,8 @@
 using namespace std;
 
 int main(){
-    int a;
-    int b;
+    float a;
+    float b;
 
     cout<<"Masukkan Angka Pertama : ";
     cin>>a;
