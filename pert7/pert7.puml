@@ -1,0 +1,23 @@
+@startuml pert5
+start
+:Initialize Variables;
+while (pilih !='2') is (control statement iteration)
+    :Display menu();
+    :Get User Input(pilih);
+    if (pilih == 'makanan') then (case 1)
+            :Get Input (1. pecel ayam
+                        2. pecel lele 
+                        3. kembali);
+            :if ()
+    else if (pilih == 'Minuman') then (case 2)
+            :Get input (a,b);
+            :
+ 
+    else 
+            :Display "Pilihan Salah!";
+    endif 
+endwhile (Control Statement)    
+:Display "EXIT";
+stop
+
+@enduml
