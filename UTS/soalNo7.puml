@@ -1,0 +1,44 @@
+@startuml
+
+start
+
+:Pilih operasi aritmetika;
+:1. Tambah;
+:2. Kurang;
+:3. Kali;
+:4. Bagi;
+:5. Keluar;
+
+if (Pilih operasi == 1) then (Tambah)
+    :Masukkan bilangan pertama;
+    :Masukkan bilangan kedua;
+    :Hasil = a + b;
+    :Tampilkan hasil;
+else if (Pilih operasi == 2) then (Kurang)
+    :Masukkan bilangan pertama;
+    :Masukkan bilangan kedua;
+    :Hasil = a - b;
+    :Tampilkan hasil;
+else if (Pilih operasi == 3) then (Kali)
+    :Masukkan bilangan pertama;
+    :Masukkan bilangan kedua;
+    :Hasil = a * b;
+    :Tampilkan hasil;
+else if (Pilih operasi == 4) then (Bagi)
+    :Masukkan bilangan pertama;
+    :Masukkan bilangan kedua;
+    if (b != 0) then (Bagi dengan nol tidak diperbolehkan)
+        :Hasil = a / b;
+        :Tampilkan hasil;
+    else
+        :Tampilkan pesan kesalahan;
+    endif
+else if (Pilih operasi == 5) then (Keluar)
+    :Keluar dari program;
+else
+    :Pilihan tidak valid;
+endif
+
+stop
+
+@enduml
