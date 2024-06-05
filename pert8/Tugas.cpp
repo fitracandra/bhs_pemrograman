@@ -14,30 +14,13 @@ struct MenuItem {
 
 // Fungsi untuk menampilkan menu restoran
 void displayMenu(const vector<MenuItem>& menu) {
-    cout << "====================== Menu ======================" << endl;
-    cout << left << setw(5) << "ID" << setw(20) << "Nama" << setw(10) << "Harga" << endl;
-    cout << "-------------------------------------------------" << endl;
+    cout << "====================== Menu Warung kelontong ======================" << endl;
+    cout << left << setw(5) << "ID" << setw(30) << "Nama" << setw(10) << "Harga" << endl;
+    cout << "-----------------------------------------------------------" << endl;
     for (const auto& item : menu) {
-        cout << left << setw(5) << item.id << setw(20) << item.name << "Rp. " << fixed << setprecision(2) << item.price << endl;
+        cout << left << setw(5) << item.id << setw(30) << item.name << "Rp. " << fixed << setprecision(2) << item.price << endl;
     }
-    cout << "=================================================" << endl;
-}
-
-// Fungsi untuk menambahkan item baru ke menu
-void addMenuItem(vector<MenuItem>& menu) {
-    MenuItem newItem;
-    newItem.id = menu.size() + 1;
-
-    cout << "Masukkan nama item: ";
-    cin.ignore();  // Membersihkan buffer input
-    getline(cin, newItem.name);
-
-    cout << "Masukkan harga item: Rp. ";
-    cin >> newItem.price;
-
-    menu.push_back(newItem);
-
-    cout << "Item berhasil ditambahkan ke menu." << endl;
+    cout << "===========================================================" << endl;
 }
 
 // Fungsi untuk memesan item dari menu
@@ -45,7 +28,7 @@ void placeOrder(const vector<MenuItem>& menu) {
     int id, quantity;
     double total = 0.0;
 
-    cout << "Masukkan ID item yang ingin dipesan (0 untuk selesai): ";
+    cout << "Masukkan ID menu yang ingin dipesan (0 untuk selesai): ";
     while (cin >> id && id != 0) {
         bool found = false;
         for (const auto& item : menu) {
@@ -61,7 +44,7 @@ void placeOrder(const vector<MenuItem>& menu) {
         if (!found) {
             cout << "ID tidak valid. Coba lagi." << endl;
         }
-        cout << "Masukkan ID item yang ingin dipesan (0 untuk selesai): ";
+        cout << "Masukkan menu yang ingin dipesan (0 untuk selesai): ";
     }
 
     cout << "\nTotal pesanan: Rp. " << fixed << setprecision(2) << total << endl;
@@ -69,16 +52,33 @@ void placeOrder(const vector<MenuItem>& menu) {
 
 // Fungsi utama
 int main() {
-    vector<MenuItem> menu;
+    // Inisialisasi menu dengan beberapa menu warung
+    vector<MenuItem> menu = {
+        {1, "Indomie Goreng", 3500.00},
+        {2, "Indomie Kuah", 3000.00},
+        {3, "Indomie Kari Ayam", 3000.00},
+        {4, "Indomie Soto Mie", 2000.00},
+        {5, "Indomie Ayam Bawang", 3000.00},
+        {6, "Indomie Goreng Jumbo", 4000.00},
+        {7, "mie sakura", 2500.00},
+        {8, "mie Gaga goreng", 3000.00},
+        {9, "mie Gaga kuah", 3000.00},
+        {10, "surya 12", 28000.00},
+        {11, "surya 16", 35000.00},
+        {12, "online 16", 23000.00},
+        {13, "online 20", 27000.00},
+        {14, "onbold 16", 21000.00},
+        {15, "onbold 20", 25000.00},
+    };
+
     int choice;
 
     do {
-        cout << "=============== Sistem Pemesanan Restoran ===============" << endl;
+        cout << "=============== Sistem Penjualan Mie Instan ===============" << endl;
         cout << "1. Tampilkan Menu" << endl;
-        cout << "2. Tambah Item ke Menu" << endl;
-        cout << "3. Buat Pesanan" << endl;
-        cout << "4. Keluar" << endl;
-        cout << "Pilih opsi (1-4): ";
+        cout << "2. Buat Pesanan" << endl;
+        cout << "3. Keluar" << endl;
+        cout << "Pilih opsi (1-3): ";
         cin >> choice;
 
         switch (choice) {
@@ -86,19 +86,16 @@ int main() {
                 displayMenu(menu);
                 break;
             case 2:
-                addMenuItem(menu);
-                break;
-            case 3:
                 placeOrder(menu);
                 break;
-            case 4:
-                cout << "Terima kasih telah menggunakan sistem pemesanan kami." << endl;
+            case 3:
+                cout << "Terima kasih telah menggunakan sistem penjualan kami." << endl;
                 break;
             default:
                 cout << "Pilihan tidak valid. Silakan coba lagi." << endl;
         }
         cout << endl;
-    } while (choice != 4);
+    } while (choice != 3);
 
     return 0;
 }
