@@ -1,0 +1,23 @@
+@startuml
+start
+:Inisialisasi menu dengan beberapa item;
+:Inisialisasi variabel choice;
+
+repeat
+    :Tampilkan menu utama;
+    :Pilih opsi (1-3);
+    switch (choice)
+        case (1)
+            :Panggil fungsi displayMenu(menu);
+        case (2)
+            :Panggil fungsi placeOrder(menu);
+        case (3)
+            :Tampilkan pesan "Terima kasih telah menggunakan sistem penjualan kami.";
+            stop
+        case (default)
+            :Tampilkan pesan "Pilihan tidak valid. Silakan coba lagi.";
+    endswitch
+repeat while (choice != 3)
+
+stop
+@enduml
