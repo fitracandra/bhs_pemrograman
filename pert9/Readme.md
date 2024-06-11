@@ -14,21 +14,26 @@ Untuk lebih memahami 3 poin di atas, langsung saja kita lakukan praktiknya.
 
 A. Tidak Terurut (Set)
     Tipe kumpulan data tidak berurutan. Artinya, kita tidak bisa menggunakan index untuk mengakses nilai-nilai.
-- kesalahan:
-- my_set = {'a'} 
-- print(my_set[0])
 
-- Pesan eror:
-- Traceback (most recent call last):
-- File "<stdin>", line 1, in <module> 
-- TypeError: 'set' object is note subscriptable
+ kesalahan:
 
-- Kita juga bisa melihat kode program yang telah kita buat tadi:
-- student_set = { 'Huda', 'Lendis', 'Wahid', 'Basith'} 
-- print(student_set)
+ my_set = {'a'} 
+ print(my_set[0])
 
-- keluaran:
-- {'Wahid', 'Lendis', 'Basith', 'Huda'}
+ Pesan eror:
+
+ Traceback (most recent call last):
+ File "<stdin>", line 1, in <module> 
+ TypeError: 'set' object is note subscriptable
+
+ Kita juga bisa melihat kode program yang telah kita buat tadi:
+ 
+ student_set = { 'Huda', 'Lendis', 'Wahid', 'Basith'} 
+ print(student_set)
+
+ keluaran:
+
+ {'Wahid', 'Lendis', 'Basith', 'Huda'}
 
 Dimana diatas kita definisikan 4 anggota himpunan secara berurutan: Huda, Lendis, Wahid, dan Basith. Namun setelah kami cetak, kami mendapat pesanan yang berbeda.
 
