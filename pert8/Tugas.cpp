@@ -69,12 +69,16 @@ int main() {
         {13, "online 20", 27000.00},
         {14, "onbold 16", 21000.00},
         {15, "onbold 20", 25000.00},
+        {16, "gas 3kg", 22000.00},
+        {17, "lemineral galon", 18000.00},
+        {18, "aqua galon", 19000.00},
+        {17, "cleo galon", 21000.00},
     };
 
     int choice;
 
     do {
-        cout << "=============== Sistem Penjualan Mie Instan ===============" << endl;
+        cout << "=============== Sistem Penjualan warung ===============" << endl;
         cout << "1. Tampilkan Menu" << endl;
         cout << "2. Buat Pesanan" << endl;
         cout << "3. Keluar" << endl;
